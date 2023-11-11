@@ -9,7 +9,24 @@ Note that that you cannot use the Array `map` or `filter` methods to solve this
 problem.
 
 Examples:
+AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
+    (optional if you already asked a question for this problem.)
+- Explain how you are using both of the callbacks in the function.
+- What do you expect each callback function to be returning?
+- How many times are you calling each callback function?
+*******************************************************************************/
 
+let selectiveMap = function(array,cb1,cb2) {
+    let newArr = [];
+    for (i = 0; i < array.length; i++){
+        if (cb1(array[i])){
+            newArr.push(cb2(array[i]));
+        } else {
+            newArr.push(array[i]);
+        }
+    }
+    return newArr;
+};
 function isEven(n) {
     return n % 2 === 0;
 }
@@ -34,19 +51,6 @@ console.log(selectiveMap([-10, 4, 7, 6, -2, -9], isEven, flipSign));
 
 console.log(selectiveMap([-10, 4, 7, 6, -2, -9], isPositive, square));
 // [-10, 16, 49, 36, -2, -9]
-
-AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
-    (optional if you already asked a question for this problem.)
-- Explain how you are using both of the callbacks in the function.
-- What do you expect each callback function to be returning?
-- How many times are you calling each callback function?
-*******************************************************************************/
-
-let selectiveMap = function() {
-
-};
-
-
 
 
 
