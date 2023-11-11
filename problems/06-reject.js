@@ -9,7 +9,17 @@ Note that that you cannot use the Array `map` or `filter` methods to solve this
 problem.
 
 Examples:
+*******************************************************************************/
 
+let reject = function(array,cb) {
+    let newArr = [];
+    for (i = 0; i < array.length; i++){
+        if (!cb(array[i])){
+            newArr.push(array[i]);
+        }
+    }
+    return newArr;
+};
 let isEven = function(n) {
     return n % 2 === 0;
 };
@@ -19,12 +29,6 @@ let hasA = function(s) {
     return s.toLowerCase().includes('a');
 };
 console.log(reject(['breadth', 'GRAPH', 'depth', 'height'], hasA)); // [ 'depth', 'height' ]
-*******************************************************************************/
-
-let reject = function() {
-
-};
-
 
 
 
