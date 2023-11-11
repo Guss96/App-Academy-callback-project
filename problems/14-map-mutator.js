@@ -4,6 +4,13 @@ The function should pass each element and index into the callback and use the re
 to overwrite elements of the original array, mutating the array.
 
 Examples:
+*******************************************************************************/
+
+let mapMutator = function(array, cb) {
+    for (i = 0; i < array.length; i++){
+        array.splice(i,1,cb(array[i],i));
+    }
+};
 
 let arr1 = [4, 2, 6, 5];
 mapMutator(arr1, function (el) {
@@ -16,12 +23,6 @@ mapMutator(arr2, function (el, i) {
     return el * i;
 });
 console.log(arr2); // [ 0, 9, 20 ]
-*******************************************************************************/
-
-let mapMutator = function() {
-
-};
-
 
 
 
