@@ -9,7 +9,19 @@ all of the given callbacks. In other words, if three callbacks are given then:
 - the result of the third callback is the final result
 
 Examples:
+*******************************************************************************/
 
+let chainMap = function(number, cb1, cb2,cb3) {
+    let res;
+    if (cb2 === undefined){
+        res = cb1(number);
+    } else if (cb3 === undefined){
+      res = cb2(cb1(number));
+            } else {
+                res = cb3(cb2(cb1(number)));
+            }
+    return res;
+};
 let add5 = function(n) {
     return n + 5;
 };
@@ -27,11 +39,6 @@ console.log(chainMap(25, add5, half));          // 15
 console.log(chainMap(25, add5, half, square));  // 225
 console.log(chainMap(4, square, half));         // 8
 console.log(chainMap(4, half, square));         // 4
-*******************************************************************************/
-
-let chainMap = function() {
-
-};
 
 
 
