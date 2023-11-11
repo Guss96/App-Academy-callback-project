@@ -4,6 +4,18 @@ The function should return a new sentence where every word of the original sente
 becomes the result of passing the word to the callback.
 
 Examples:
+*******************************************************************************/
+
+let sentenceMapper = function(sentence,cb) {
+    let arr = sentence.split(" ");
+    let newArr = [];
+    let newSentence = "";
+    for (i = 0; i < arr.length; i++){
+        newArr.push(cb(arr[i]));
+    }
+    newSentence = newArr.join(" ");
+    return newSentence;
+};
 
 let result1 = sentenceMapper("what is the answer?", function(word) {
     return word.toUpperCase() + "!";
@@ -23,13 +35,6 @@ let removeVowels = function(word) {
 
 let result2 = sentenceMapper("this is pretty cool right", removeVowels);
 console.log(result2); // 'ths s prtty cl rght'
-*******************************************************************************/
-
-let sentenceMapper = function() {
-
-};
-
-
 
 
 
