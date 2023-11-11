@@ -6,7 +6,16 @@ indicating whether or not at least one element of the array returns true when pa
 into the callback.
 
 Examples:
+*******************************************************************************/
 
+let mySome = function(array,cb) {
+    for (i = 0; i < array.length; i++){
+        if (cb(array[i],i)){
+            return true;
+        }
+    }
+    return false;
+};
 let result1 = mySome([5, 1, 7, 9], function(ele, i) {
     return ele === i;
 });
@@ -21,12 +30,6 @@ let result3 = mySome(['soup', 'noodles', 'bike', 'ship'], function(ele) {
     return ele.length === 4;
 });
 console.log(result3);   // true
-*******************************************************************************/
-
-let mySome = function() {
-
-};
-
 
 
 
