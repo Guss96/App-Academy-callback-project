@@ -5,9 +5,18 @@ the element. The function should return a new array containing
 the elements that result in true when passed to the callback.
 
 Do not use the built in Array#filter.
-
 Examples:
+*******************************************************************************/
 
+let myFilter = function(array, cb) {
+let newArr = [];
+for (i = 0; i < array.length; i++){
+    if(cb(array[i])){
+        newArr.push(array[i]);
+    }
+}
+return newArr;
+};
 let result1 = myFilter([5, 7, 4, 3, 8], function (n) {
     return n % 2 === 0;
 });
@@ -17,12 +26,6 @@ let result2 = myFilter(['choose', 'big', 'words', 'only'], function (s) {
     return s.length > 3;
 });
 console.log(result2);      // ['choose', 'words', 'only']
-*******************************************************************************/
-
-let myFilter = function() {
-
-};
-
 
 
 
