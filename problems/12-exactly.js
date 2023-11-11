@@ -4,7 +4,17 @@ arguments. The function should return a boolean indicating whether or not there 
 exactly `number` elements of the array that return true when passed into the callback.
 
 Examples:
+*******************************************************************************/
 
+let exactly = function(array,n,cb) {
+    let counter = 0;
+    for (i = 0; i < array.length; i++){
+        if (cb(array[i])){
+            counter ++;
+        }
+    }
+    return counter === n;
+};
 let result1 = exactly([18, 5, 32, 7, 100], 3, function (n) {
     return n % 2 === 0;
 });
@@ -24,13 +34,6 @@ let result4 = exactly(['follow', 'the', 'yellow', 'brick', 'road'], 0, function 
     return str.includes('x');
 });
 console.log(result4); // true
-
-*******************************************************************************/
-
-let exactly = function() {
-
-};
-
 
 
 
