@@ -6,6 +6,16 @@ elements of the array result to false when passed into the callback. Otherwise,
 the method should return false.
 
 Examples:
+*******************************************************************************/
+
+let none = function(array,cb) {
+    for (i = 0; i < array.length; i++){
+        if (cb(array[i])){
+            return false;
+        }
+    }
+    return true;
+};
 
 let result1 = none(['ruby', 'topaz', 'opal'], function(w) {
     return w.includes('e');
@@ -26,13 +36,6 @@ let result4 = none([4, -5, 7, -1], function(n) {
     return n < 0;
 });
 console.log(result4);   // false
-*******************************************************************************/
-
-let none = function() {
-
-};
-
-
 
 
 
