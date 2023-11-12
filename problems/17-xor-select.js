@@ -4,6 +4,17 @@ The function should return a new array containing elements of the original array
 that result in true when passed in one of the callbacks, but not both.
 
 Examples:
+*******************************************************************************/
+
+let xorSelect = function(array,cb1,cb2) {
+  let newArray = [];
+  for (i = 0; i < array.length; i++){
+    if (!(cb1(array[i])) !== !(cb2(array[i]))){
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+};
 
 let isEven = function(n) {
   return n % 2 === 0;
@@ -29,13 +40,6 @@ console.log(
   xorSelect(["art", "academy", "app", "cat", "buttery"], longString, startsA)
 );
 // [ 'art', 'app', 'buttery' ]
-*******************************************************************************/
-
-let xorSelect = function() {
-
-};
-
-
 
 
 
