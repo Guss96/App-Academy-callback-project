@@ -5,7 +5,16 @@ at most (fewer than or equal to) `max` elements of the array that result in true
 when passed into the callback.
 
 Examples:
-
+*******************************************************************************/
+let atMost = function(array,n,cb) {
+    let counter = 0;
+    for (i = 0; i < array.length; i++){
+        if (cb(array[i])){
+            counter ++;
+        }
+    }
+    return counter <= n;
+};
 let isPositive = function (n) {
     return n > 0;
 };
@@ -19,13 +28,6 @@ console.log(atMost([6, 2, 4, 1], 3, isPositive));                               
 console.log(atMost(['boat', 'cat', 'car'], 1, startsWithA));                    // true
 console.log(atMost(['boat', 'cat', 'car', 'academy'], 1, startsWithA));         // true
 console.log(atMost(['boat', 'arc', 'cat', 'car', 'academy'], 1, startsWithA));  // false
-
-*******************************************************************************/
-
-let atMost = function() {
-
-};
-
 
 
 
