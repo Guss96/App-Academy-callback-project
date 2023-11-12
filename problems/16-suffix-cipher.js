@@ -8,6 +8,33 @@ be modified. You can assume that only one suffix of the object will match a word
 
 Examples:
 
+*******************************************************************************/
+
+let suffixCipher = function(sentence,obj) {
+    let array = sentence.split(" ");
+    let newArray = [];
+    let testArray = [];
+    let thisKey;
+    for (i = 0; i < array.length; i++){
+        let word = array[i];
+        testArray = [];
+        for (let key in obj){
+            if (word.endsWith(key)){
+                testArray.push(true);
+                thisKey = key;
+            } else {
+                testArray.push(false);
+                }
+        }
+        if (testArray.includes(true)) {
+            newArray.push(obj[thisKey](word));
+        } else {
+            newArray.push(word);
+        }
+    }
+    return newArray.join(" ");
+};
+
 let cipher1 = {
     ly: function(word) {
         return word.slice(0, -1) + 'ee';
@@ -29,12 +56,6 @@ let cipher2 = {
 };
 console.log(suffixCipher('incremental progress is very instrumental', cipher2));
 // INCREMENTAL progressth isth very INSTRUMENTAL
-*******************************************************************************/
-
-let suffixCipher = function() {
-
-};
-
 
 
 
