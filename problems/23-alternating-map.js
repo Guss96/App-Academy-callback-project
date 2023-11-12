@@ -9,9 +9,18 @@ In other words,
     - the third element should be passed to callback 1
     - the fourth element should be passed to callback 2
     - ... and so on
-
-Examples:
-
+*******************************************************************************/
+let alternatingMap = function(array,cb1,cb2) {
+    let newArray = [];
+    for (i = 0; i < array.length; i ++){
+        if (i % 2 === 0){
+        newArray.push(cb1(array[i]));
+        } else {
+            newArray.push(cb2(array[i]));
+        }
+    }
+    return newArray;
+};
 let triple = function (n) {
     return 3 * n;
 };
@@ -32,13 +41,6 @@ let whisper = function (s) {
 };
 console.log(alternatingMap(['hEy', 'EVERYone', 'whats', 'uP??'], yell, whisper));
 // [ 'HEY!', '..everyone..', 'WHATS!', '..up??..' ]
-
-*******************************************************************************/
-
-
-let alternatingMap = function() {
-
-};
 
 
 
